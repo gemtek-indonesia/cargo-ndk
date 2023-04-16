@@ -188,7 +188,7 @@ impl Display for BuildMode {
 }
 
 fn is_supported_rustc_version() -> bool {
-    version_check::is_min_version("1.68.0").unwrap_or_default()
+    version_check::is_min_version("1.65.0").unwrap_or_default()
 }
 
 pub(crate) fn run(args: Vec<String>) {
@@ -202,7 +202,7 @@ pub(crate) fn run(args: Vec<String>) {
 
     if !is_supported_rustc_version() {
         log::error!("Rust compiler is too old and not supported by cargo-ndk.");
-        log::error!("Upgrade Rust to at least v1.68.0.");
+        log::error!("Upgrade Rust to at least v1.65.0.");
         std::process::exit(1);
     }
 

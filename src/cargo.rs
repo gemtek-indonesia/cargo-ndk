@@ -67,10 +67,10 @@ pub(crate) fn run(
 ) -> std::process::ExitStatus {
     log::debug!("Detected NDK version: {:?}", &version);
 
-    if version.major < 23 {
-        log::error!("NDK versions less than r23 are not supported. Install an up-to-date version of the NDK.");
-        std::process::exit(1);
-    }
+    //if version.major < 23 {
+    //    log::error!("NDK versions less than r23 are not supported. Install an up-to-date version of the NDK.");
+    //    std::process::exit(1);
+    //}
 
     let target_linker = ndk_home.join(clang_suffix(triple, ARCH, platform, ""));
     let target_cxx = ndk_home.join(clang_suffix(triple, ARCH, platform, "++"));
